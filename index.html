@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents Presentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Geometric Background Pattern -->
+    <div class="bg-pattern"></div>
+    
+    <!-- Presentation Container -->
+    <div class="presentation-container">
+        
+        <!-- Slide 0: Video Showcase Page -->
+        <section class="slide active" data-slide="0">
+            <div class="video-showcase">
+                <div class="video-grid">
+                    <div class="video-item" data-video-index="0">
+                        <video class="showcase-video" muted playsinline>
+                            <source src="AI_Agents_Video_Generated.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">AI Agents Video</div>
+                    </div>
+                    <div class="video-item" data-video-index="1">
+                        <video class="showcase-video" muted playsinline>
+                            <source src="AI_Agents_Explainer_Video_Creation.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Explainer Video</div>
+                    </div>
+                    <div class="video-item" data-video-index="2">
+                        <video class="showcase-video" muted playsinline>
+                            <source src="Human_Work_Transforms_to_AI.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Human Work Transforms</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 1: What Is an AI Agent -->
+        <section class="slide" data-slide="1">
+            <div class="slide-content">
+                <h1 class="slide-header glow-text">🧠 What Is an AI Agent?</h1>
+                
+                <div class="definition-box card">
+                    <h3 class="section-label">Definition:</h3>
+                    <p class="definition-text">An AI Agent is an <span class="highlight">autonomous or semi-autonomous system</span> that perceives its environment, reasons about it, and takes actions to achieve specific goals — often adapting over time through learning.</p>
+                </div>
+
+                <div class="key-traits">
+                    <h3 class="section-label">Key Traits:</h3>
+                    <div class="traits-grid">
+                        <div class="trait-item card">
+                            <div class="trait-icon">👁️</div>
+                            <div class="trait-content">
+                                <h4>Perceives</h4>
+                                <p>Gathers data from its environment</p>
+                            </div>
+                        </div>
+                        <div class="trait-item card">
+                            <div class="trait-icon">💭</div>
+                            <div class="trait-content">
+                                <h4>Thinks</h4>
+                                <p>Analyzes, plans, and makes decisions</p>
+                            </div>
+                        </div>
+                        <div class="trait-item card">
+                            <div class="trait-icon">⚙️</div>
+                            <div class="trait-content">
+                                <h4>Acts</h4>
+                                <p>Executes actions to reach objectives</p>
+                            </div>
+                        </div>
+                        <div class="trait-item card">
+                            <div class="trait-icon">📈</div>
+                            <div class="trait-content">
+                                <h4>Learns <span class="optional">(optional)</span></h4>
+                                <p>Improves from feedback or experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="examples-section">
+                    <h3 class="section-label">Examples:</h3>
+                    <div class="examples-tags">
+                        <span class="example-tag">🤖 Chatbots</span>
+                        <span class="example-tag">💼 Sales assistants</span>
+                        <span class="example-tag">🔄 Workflow automation bots</span>
+                        <span class="example-tag">📊 Trading agents</span>
+                    </div>
+                </div>
+
+                <div class="source-citation">
+                    <strong>Source:</strong> Russell, S. & Norvig, P. (2020). <em>Artificial Intelligence: A Modern Approach</em> (4th ed.).<br>
+                    Adapted with modern interpretation for applied AI systems (e.g., OpenAI, Google DeepMind).
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Interactive Demo -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <h1 class="slide-header glow-text">🧠 Interactive Demo: How an AI Agent Works</h1>
+                <p class="demo-intro">Imagine an AI Agent as a thinking system that senses, understands, and acts — a bit like a digital assistant that learns from experience.</p>
+                
+                <div class="core-structure-label">
+                    <h3>🧩 Core Structure</h3>
+                    <p>You can visualize it as a loop:</p>
+                </div>
+
+                <div class="agent-flow-container">
+                    <!-- Sequential Flow -->
+                    <div class="flow-sequence">
+                        <!-- Step 1: Environment -->
+                        <div class="flow-step" data-component="environment" data-step="1">
+                            <div class="step-number">1️⃣</div>
+                            <div class="step-icon">🌍</div>
+                            <div class="step-label">Environment</div>
+                        </div>
+
+                        <div class="flow-arrow">→</div>
+
+                        <!-- Step 2: Perception -->
+                        <div class="flow-step" data-component="perception" data-step="2">
+                            <div class="step-number">2️⃣</div>
+                            <div class="step-icon">👁️</div>
+                            <div class="step-label">Perception</div>
+                        </div>
+
+                        <div class="flow-arrow">→</div>
+
+                        <!-- Step 3: Memory -->
+                        <div class="flow-step" data-component="memory" data-step="3">
+                            <div class="step-number">3️⃣</div>
+                            <div class="step-icon">💾</div>
+                            <div class="step-label">Memory</div>
+                        </div>
+
+                        <div class="flow-arrow">→</div>
+
+                        <!-- Step 4: Reasoning -->
+                        <div class="flow-step" data-component="reasoning" data-step="4">
+                            <div class="step-number">4️⃣</div>
+                            <div class="step-icon">🧮</div>
+                            <div class="step-label">Reasoning</div>
+                        </div>
+
+                        <div class="flow-arrow">→</div>
+
+                        <!-- Step 5: Action -->
+                        <div class="flow-step" data-component="action" data-step="5">
+                            <div class="step-number">5️⃣</div>
+                            <div class="step-icon">⚙️</div>
+                            <div class="step-label">Action</div>
+                        </div>
+
+                        <div class="flow-arrow">→</div>
+
+                        <!-- Step 6: Feedback -->
+                        <div class="flow-step" data-component="feedback" data-step="6">
+                            <div class="step-number">6️⃣</div>
+                            <div class="step-icon">🔁</div>
+                            <div class="step-label">Feedback</div>
+                        </div>
+
+                        <div class="flow-arrow loop-arrow">↺</div>
+                    </div>
+
+                    <!-- Info Panel (appears when component is clicked) -->
+                    <div class="info-panel-inline hidden" id="infoPanel">
+                        <button class="close-panel" id="closePanel">✕</button>
+                        <div id="infoPanelContent"></div>
+                    </div>
+                </div>
+
+                <div class="toggle-container">
+                    <button id="modernToggle" class="modern-toggle">Show Modern AI Agent Layer</button>
+                </div>
+
+                <!-- Modern AI Layer (hidden by default) -->
+                <div class="modern-layer-inline hidden" id="modernLayer">
+                    <h3 class="modern-layer-title">💡 Modern AI Agent Layer</h3>
+                    <div class="modern-components-grid">
+                        <div class="modern-item">🧬 <strong>LLM Core:</strong> Thinks and plans using natural language</div>
+                        <div class="modern-item">🧠 <strong>Memory Store:</strong> Remembers previous interactions</div>
+                        <div class="modern-item">🔧 <strong>Tool Use:</strong> Connects to APIs, CRMs, or data systems</div>
+                        <div class="modern-item">🎛️ <strong>Controller:</strong> Coordinates planning and execution</div>
+                        <div class="modern-item">🔁 <strong>Feedback:</strong> Evaluates success and refines behavior</div>
+                    </div>
+                </div>
+
+                <p class="interaction-hint">💡 Click on any component to learn more</p>
+            </div>
+        </section>
+
+        <!-- Slide 3: Grid Layout -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2 class="slide-header glow-text">Grid Layout</h2>
+                <div class="grid-layout">
+                    <div class="grid-item card">
+                        <div class="icon-placeholder">1</div>
+                        <h3>Item One</h3>
+                        <p>Description here</p>
+                    </div>
+                    <div class="grid-item card">
+                        <div class="icon-placeholder">2</div>
+                        <h3>Item Two</h3>
+                        <p>Description here</p>
+                    </div>
+                    <div class="grid-item card">
+                        <div class="icon-placeholder">3</div>
+                        <h3>Item Three</h3>
+                        <p>Description here</p>
+                    </div>
+                    <div class="grid-item card">
+                        <div class="icon-placeholder">4</div>
+                        <h3>Item Four</h3>
+                        <p>Description here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Full-Screen Content Layout -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content fullscreen-content">
+                <div class="content-box card">
+                    <h2 class="glow-text">Full Screen Content</h2>
+                    <div class="accent-line"></div>
+                    <p>This layout is perfect for detailed information or key messages.</p>
+                    <p>Add your content, images, or diagrams here.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="bullet">▸</span>
+                            <span>Feature or point 1</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="bullet">▸</span>
+                            <span>Feature or point 2</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="bullet">▸</span>
+                            <span>Feature or point 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Centered Card Layout -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content centered">
+                <div class="center-card card">
+                    <div class="card-header">
+                        <h2 class="glow-text">Key Point</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>This layout emphasizes a single important message or concept.</p>
+                        <div class="highlight-box">
+                            <p class="highlight-text">Your highlighted message here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Additional Layout Example -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <h2 class="slide-header glow-text">Another Layout</h2>
+                <div class="content-wrapper">
+                    <div class="main-content card">
+                        <h3>Main Content Area</h3>
+                        <p>Customize this layout as needed for your presentation.</p>
+                    </div>
+                    <div class="sidebar card">
+                        <h4>Sidebar</h4>
+                        <p>Additional info or notes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" id="prevBtn">
+            <span class="arrow">‹</span>
+        </button>
+        <button class="nav-btn next-btn" id="nextBtn">
+            <span class="arrow">›</span>
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
