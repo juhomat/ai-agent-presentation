@@ -6,19 +6,16 @@ const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 const progressFill = document.querySelector('.progress-fill');
 
-// Video Showcase State
-let currentPlayingVideo = 0;
-let videoShowcaseInterval = null;
-const videoItems = document.querySelectorAll('.video-item');
+// Video Showcase - all videos play simultaneously
 const showcaseVideos = document.querySelectorAll('.showcase-video');
 
 // Initialize
 function init() {
     updateProgressBar();
     
-    // Start video showcase on slide 0
+    // Start all videos playing on slide 0
     if (currentSlide === 0) {
-        startVideoShowcase();
+        playAllVideos();
     }
 }
 
@@ -41,11 +38,11 @@ function goToSlide(index) {
     // Update UI
     updateProgressBar();
     
-    // Handle video showcase
-    if (currentSlide === 0) {
-        startVideoShowcase();
+    // Handle video showcase - pause videos when leaving slide 0
+    if (currentSlide !== 0) {
+        pauseAllVideos();
     } else {
-        stopVideoShowcase();
+        playAllVideos();
     }
 }
 
@@ -67,164 +64,24 @@ function updateProgressBar() {
     progressFill.style.width = `${progress}%`;
 }
 
-// Video Showcase Functions
-function startVideoShowcase() {
-    // Reset all videos
+// Video Showcase Functions - Play all simultaneously
+function playAllVideos() {
     showcaseVideos.forEach(video => {
-        video.currentTime = 0;
-        video.pause();
-    });
-    
-    currentPlayingVideo = 0;
-    playNextVideo();
-}
-
-function playNextVideo() {
-    // Only run if we're on slide 0
-    if (currentSlide !== 0) {
-        stopVideoShowcase();
-        return;
-    }
-    
-    // Reset all video items to default state
-    videoItems.forEach((item, index) => {
-        item.classList.remove('playing', 'dimmed');
-        if (index !== currentPlayingVideo) {
-            item.classList.add('dimmed');
-        }
-    });
-    
-    // Get current video item and video element
-    const currentItem = videoItems[currentPlayingVideo];
-    const currentVideo = showcaseVideos[currentPlayingVideo];
-    
-    // Expand the current video
-    currentItem.classList.add('playing');
-    currentItem.classList.remove('dimmed');
-    
-    // Small delay before playing to allow animation to complete
-    setTimeout(() => {
-        currentVideo.play().catch(err => {
+        video.play().catch(err => {
             console.log('Video autoplay prevented:', err);
         });
-    }, 400);
-    
-    // Listen for video end
-    currentVideo.onended = () => {
-        // Contract the video
-        currentItem.classList.remove('playing');
-        
-        // Wait for animation to complete before moving to next
-        setTimeout(() => {
-            currentPlayingVideo = (currentPlayingVideo + 1) % videoItems.length;
-            playNextVideo();
-        }, 800);
-    };
+    });
 }
 
-function stopVideoShowcase() {
-    // Pause all videos
+function pauseAllVideos() {
     showcaseVideos.forEach(video => {
         video.pause();
     });
-    
-    // Reset all states
-    videoItems.forEach(item => {
-        item.classList.remove('playing', 'dimmed');
-    });
 }
 
-// Event Listeners
+// Event Listeners - ONLY arrow button clicks
 document.getElementById('nextBtn').addEventListener('click', nextSlide);
 document.getElementById('prevBtn').addEventListener('click', prevSlide);
-
-// Keyboard Navigation
-document.addEventListener('keydown', (e) => {
-    switch(e.key) {
-        case 'ArrowRight':
-        case 'PageDown':
-        case ' ': // Spacebar
-            e.preventDefault();
-            nextSlide();
-            break;
-        case 'ArrowLeft':
-        case 'PageUp':
-            e.preventDefault();
-            prevSlide();
-            break;
-        case 'Home':
-            e.preventDefault();
-            goToSlide(0);
-            break;
-        case 'End':
-            e.preventDefault();
-            goToSlide(totalSlides - 1);
-            break;
-        case 'f':
-        case 'F':
-            // Toggle fullscreen
-            toggleFullscreen();
-            break;
-        case 'Escape':
-            // Exit fullscreen if active
-            if (document.fullscreenElement) {
-                document.exitFullscreen();
-            }
-            break;
-    }
-});
-
-// Touch/Swipe Support
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            // Swiped left - next slide
-            nextSlide();
-        } else {
-            // Swiped right - previous slide
-            prevSlide();
-        }
-    }
-}
-
-// Fullscreen Toggle
-function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(err => {
-            console.log(`Error attempting to enable fullscreen: ${err.message}`);
-        });
-    } else {
-        document.exitFullscreen();
-    }
-}
-
-// Mouse Wheel Navigation (optional, can be removed if too sensitive)
-let wheelTimeout;
-document.addEventListener('wheel', (e) => {
-    clearTimeout(wheelTimeout);
-    wheelTimeout = setTimeout(() => {
-        if (e.deltaY > 0) {
-            nextSlide();
-        } else if (e.deltaY < 0) {
-            prevSlide();
-        }
-    }, 150);
-}, { passive: true });
 
 // Initialize on page load
 init();
@@ -409,8 +266,7 @@ function showComponentInfo(component) {
 // No particle animation needed for sequential flow
 
 console.log('AI Agents Presentation loaded successfully!');
-console.log('Controls: Arrow keys, PageUp/PageDown, Space, or click navigation buttons');
-console.log('Press F for fullscreen mode');
-console.log('Video Showcase: Videos play sequentially with smooth transitions');
+console.log('Controls: Click the navigation arrows on the sides to change slides');
+console.log('Video Showcase: All videos play simultaneously');
 console.log('Interactive Demo: Click on agent components to learn more');
 
