@@ -5,6 +5,8 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 const progressFill = document.querySelector('.progress-fill');
+const slideNumberDisplay = document.getElementById('slideNumber');
+const currentTimeDisplay = document.getElementById('currentTime');
 
 // Video Showcase - all videos play simultaneously
 const showcaseVideos = document.querySelectorAll('.showcase-video');
@@ -12,11 +14,31 @@ const showcaseVideos = document.querySelectorAll('.showcase-video');
 // Initialize
 function init() {
     updateProgressBar();
+    updateSlideNumber();
+    startClock();
     
     // Start all videos playing on slide 0
     if (currentSlide === 0) {
         playAllVideos();
     }
+}
+
+// Update slide number display
+function updateSlideNumber() {
+    slideNumberDisplay.textContent = `${currentSlide + 1} / ${totalSlides}`;
+}
+
+// Clock function
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    currentTimeDisplay.textContent = `${hours}:${minutes}`;
+}
+
+function startClock() {
+    updateClock(); // Update immediately
+    setInterval(updateClock, 1000); // Update every second
 }
 
 // Navigate to specific slide
@@ -35,8 +57,12 @@ function goToSlide(index) {
     slides[currentSlide].classList.remove('prev');
     slides[currentSlide].classList.add('active');
     
+    // Scroll to top of the new slide
+    slides[currentSlide].scrollTop = 0;
+    
     // Update UI
     updateProgressBar();
+    updateSlideNumber();
     
     // Handle video showcase - pause videos when leaving slide 0
     if (currentSlide !== 0) {
@@ -263,10 +289,8 @@ function showComponentInfo(component) {
     }
 }
 
-// No particle animation needed for sequential flow
-
 console.log('AI Agents Presentation loaded successfully!');
 console.log('Controls: Click the navigation arrows on the sides to change slides');
 console.log('Video Showcase: All videos play simultaneously');
-console.log('Interactive Demo: Click on agent components to learn more');
+console.log('Foundation Concepts: Click to expand accordion items');
 

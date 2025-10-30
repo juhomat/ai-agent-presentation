@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Agents Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -106,133 +109,341 @@
             </div>
         </section>
 
-        <!-- Slide 2: Interactive Demo -->
+        <!-- Slide 2: Foundation Concepts -->
         <section class="slide" data-slide="2">
             <div class="slide-content">
-                <h1 class="slide-header glow-text">🧠 Interactive Demo: How an AI Agent Works</h1>
-                <p class="demo-intro">Imagine an AI Agent as a thinking system that senses, understands, and acts — a bit like a digital assistant that learns from experience.</p>
+                <h1 class="slide-header glow-text">🧠 Foundation Concepts — "What Enables AI Agents"</h1>
                 
-                <div class="core-structure-label">
-                    <h3>🧩 Core Structure</h3>
-                    <p>You can visualize it as a loop:</p>
+                <div class="accordion-concepts">
+                    <!-- Concept 1: LLMs -->
+                    <details class="accordion-item">
+                        <summary class="accordion-summary">
+                            <span class="accordion-icon">🧠</span>
+                            <span class="accordion-title">LLMs (Large Language Models)</span>
+                            <span class="accordion-chevron">▼</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-section">
+                                <h4>Why It Matters</h4>
+                                <p>Core reasoning engine that gives agents understanding and generative capabilities.</p>
+                            </div>
+                            <div class="accordion-section">
+                                <h4>How to Visualize</h4>
+                                <p>Animated "brain" that interprets input and outputs structured actions.</p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Concept 2: Tool Use -->
+                    <details class="accordion-item">
+                        <summary class="accordion-summary">
+                            <span class="accordion-icon">🔧</span>
+                            <span class="accordion-title">Tool Use / Function Calling</span>
+                            <span class="accordion-chevron">▼</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-section">
+                                <h4>Why It Matters</h4>
+                                <p>Lets agents act — connect to APIs, databases, or systems (e.g., send email, fetch data).</p>
+                            </div>
+                            <div class="accordion-section">
+                                <h4>How to Visualize</h4>
+                                <p>Diagram: "LLM → Function → Real-world effect."</p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Concept 3: Memory -->
+                    <details class="accordion-item">
+                        <summary class="accordion-summary">
+                            <span class="accordion-icon">💾</span>
+                            <span class="accordion-title">Memory (Short- & Long-Term)</span>
+                            <span class="accordion-chevron">▼</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-section">
+                                <h4>Why It Matters</h4>
+                                <p>Enables context retention, reflection, and improvement across steps.</p>
+                            </div>
+                            <div class="accordion-section">
+                                <h4>How to Visualize</h4>
+                                <p>Show "short-term buffer" vs "knowledge base" blocks.</p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Concept 4: Planning & Reasoning -->
+                    <details class="accordion-item">
+                        <summary class="accordion-summary">
+                            <span class="accordion-icon">🧮</span>
+                            <span class="accordion-title">Planning & Reasoning</span>
+                            <span class="accordion-chevron">▼</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-section">
+                                <h4>Why It Matters</h4>
+                                <p>How the agent decides what to do next — e.g., Chain-of-Thought, Tree-of-Thought, ReAct frameworks.</p>
+                            </div>
+                            <div class="accordion-section">
+                                <h4>How to Visualize</h4>
+                                <p>Flow diagram with decision branching.</p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Concept 5: Reflection & Feedback -->
+                    <details class="accordion-item">
+                        <summary class="accordion-summary">
+                            <span class="accordion-icon">🔁</span>
+                            <span class="accordion-title">Reflection & Feedback Loops</span>
+                            <span class="accordion-chevron">▼</span>
+                        </summary>
+                        <div class="accordion-content">
+                            <div class="accordion-section">
+                                <h4>Why It Matters</h4>
+                                <p>Agent evaluates its own performance and adjusts strategy.</p>
+                            </div>
+                            <div class="accordion-section">
+                                <h4>How to Visualize</h4>
+                                <p>Loop arrow from "Result" → "Evaluation" → "Next Plan."</p>
+                            </div>
+                        </div>
+                    </details>
                 </div>
 
-                <div class="agent-flow-container">
-                    <!-- Sequential Flow -->
-                    <div class="flow-sequence">
-                        <!-- Step 1: Environment -->
-                        <div class="flow-step" data-component="environment" data-step="1">
-                            <div class="step-number">1️⃣</div>
-                            <div class="step-icon">🌍</div>
-                            <div class="step-label">Environment</div>
-                        </div>
-
-                        <div class="flow-arrow">→</div>
-
-                        <!-- Step 2: Perception -->
-                        <div class="flow-step" data-component="perception" data-step="2">
-                            <div class="step-number">2️⃣</div>
-                            <div class="step-icon">👁️</div>
-                            <div class="step-label">Perception</div>
-                        </div>
-
-                        <div class="flow-arrow">→</div>
-
-                        <!-- Step 3: Memory -->
-                        <div class="flow-step" data-component="memory" data-step="3">
-                            <div class="step-number">3️⃣</div>
-                            <div class="step-icon">💾</div>
-                            <div class="step-label">Memory</div>
-                        </div>
-
-                        <div class="flow-arrow">→</div>
-
-                        <!-- Step 4: Reasoning -->
-                        <div class="flow-step" data-component="reasoning" data-step="4">
-                            <div class="step-number">4️⃣</div>
-                            <div class="step-icon">🧮</div>
-                            <div class="step-label">Reasoning</div>
-                        </div>
-
-                        <div class="flow-arrow">→</div>
-
-                        <!-- Step 5: Action -->
-                        <div class="flow-step" data-component="action" data-step="5">
-                            <div class="step-number">5️⃣</div>
-                            <div class="step-icon">⚙️</div>
-                            <div class="step-label">Action</div>
-                        </div>
-
-                        <div class="flow-arrow">→</div>
-
-                        <!-- Step 6: Feedback -->
-                        <div class="flow-step" data-component="feedback" data-step="6">
-                            <div class="step-number">6️⃣</div>
-                            <div class="step-icon">🔁</div>
-                            <div class="step-label">Feedback</div>
-                        </div>
-
-                        <div class="flow-arrow loop-arrow">↺</div>
-                    </div>
-
-                    <!-- Info Panel (appears when component is clicked) -->
-                    <div class="info-panel-inline hidden" id="infoPanel">
-                        <button class="close-panel" id="closePanel">✕</button>
-                        <div id="infoPanelContent"></div>
-                    </div>
-                </div>
-
-                <div class="toggle-container">
-                    <button id="modernToggle" class="modern-toggle">Show Modern AI Agent Layer</button>
-                </div>
-
-                <!-- Modern AI Layer (hidden by default) -->
-                <div class="modern-layer-inline hidden" id="modernLayer">
-                    <h3 class="modern-layer-title">💡 Modern AI Agent Layer</h3>
-                    <div class="modern-components-grid">
-                        <div class="modern-item">🧬 <strong>LLM Core:</strong> Thinks and plans using natural language</div>
-                        <div class="modern-item">🧠 <strong>Memory Store:</strong> Remembers previous interactions</div>
-                        <div class="modern-item">🔧 <strong>Tool Use:</strong> Connects to APIs, CRMs, or data systems</div>
-                        <div class="modern-item">🎛️ <strong>Controller:</strong> Coordinates planning and execution</div>
-                        <div class="modern-item">🔁 <strong>Feedback:</strong> Evaluates success and refines behavior</div>
-                    </div>
-                </div>
-
-                <p class="interaction-hint">💡 Click on any component to learn more</p>
+                <p class="interaction-hint">💡 Click on each concept to expand and learn more</p>
             </div>
         </section>
 
-        <!-- Slide 3: Grid Layout -->
+        <!-- Slide 3: What Is an Agentic Workflow -->
         <section class="slide" data-slide="3">
             <div class="slide-content">
-                <h2 class="slide-header glow-text">Grid Layout</h2>
-                <div class="grid-layout">
-                    <div class="grid-item card">
-                        <div class="icon-placeholder">1</div>
-                        <h3>Item One</h3>
-                        <p>Description here</p>
+                <h1 class="slide-header glow-text">⚙️ What Is an Agentic Workflow?</h1>
+                
+                <div class="definition-box card">
+                    <h3 class="section-label">Definition:</h3>
+                    <p class="definition-text">An Agentic Workflow is how you <span class="highlight">orchestrate one or more AI Agents</span> to perform multi-step, goal-driven processes.</p>
+                    <p class="definition-text">You can think of it like an assembly line where agents coordinate with each other, or with humans, to achieve a larger objective.</p>
+                </div>
+
+                <div class="workflow-example card">
+                    <h3 class="section-label">Example:</h3>
+                    <div class="goal-box">
+                        <strong>🎯 Goal:</strong> "Launch a marketing campaign"
                     </div>
-                    <div class="grid-item card">
-                        <div class="icon-placeholder">2</div>
-                        <h3>Item Two</h3>
-                        <p>Description here</p>
+                    
+                    <h4 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); color: var(--primary-blue); font-weight: 600;">Agentic workflow:</h4>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <span class="step-arrow">→</span>
+                            <span><strong>Strategy Agent</strong> defines campaign goals and audiences</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span class="step-arrow">→</span>
+                            <span><strong>Content Agent</strong> drafts the messaging and visuals</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span class="step-arrow">→</span>
+                            <span><strong>Ad Ops Agent</strong> sets up targeting and ad spend</span>
+                        </div>
+                        <div class="workflow-step">
+                            <span class="step-arrow">→</span>
+                            <span><strong>Analytics Agent</strong> monitors results and adjusts bids</span>
+                        </div>
                     </div>
-                    <div class="grid-item card">
-                        <div class="icon-placeholder">3</div>
-                        <h3>Item Three</h3>
-                        <p>Description here</p>
+
+                    <h4 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); color: var(--primary-blue); font-weight: 600;">Each agent:</h4>
+                    <ul class="agent-capabilities">
+                        <li>Has its own specialized context and tools</li>
+                        <li>Passes results to the next step (or back to a coordinator agent)</li>
+                        <li>Operates under a governed system that checks correctness, cost, and safety</li>
+                    </ul>
+                    
+                    <p style="margin-top: var(--spacing-md); font-size: 14px; color: var(--text-secondary); font-style: italic;">This is sometimes called a multi-agent system, agentic loop, or AI orchestration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: How to Distinguish from Traditional AI -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <h1 class="slide-header glow-text">🧩 How to Distinguish It from "Traditional AI" or "Chatbots"</h1>
+                
+                <div class="comparison-section">
+                    <div class="comparison-table card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Traditional Chatbot / AI App</th>
+                                    <th>AI Agent / Agentic Workflow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Input/Output</strong></td>
+                                    <td>Responds to single prompt</td>
+                                    <td>Acts toward a goal over multiple steps</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Context</strong></td>
+                                    <td>Short-term</td>
+                                    <td>Long-term memory & context</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Autonomy</strong></td>
+                                    <td>User-driven</td>
+                                    <td>Self-directed within constraints</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tools</strong></td>
+                                    <td>None or limited</td>
+                                    <td>Integrates APIs, databases, external systems</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Adaptability</strong></td>
+                                    <td>Static</td>
+                                    <td>Learns or adjusts dynamically</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Example</strong></td>
+                                    <td>"Summarize this email"</td>
+                                    <td>"Sort and categorize all incoming emails by priority and sentiment daily"</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="grid-item card">
-                        <div class="icon-placeholder">4</div>
-                        <h3>Item Four</h3>
-                        <p>Description here</p>
+                </div>
+
+                <div class="practice-example card">
+                    <h3 class="section-label">🪄 Example in Practice</h3>
+                    <p class="definition-text"><strong>Imagine HubSpot + AI:</strong></p>
+                    <p class="definition-text">A <span class="highlight">Lead Qualification Agent</span> that automatically reads inbound form submissions, checks CRM history, enriches company data, scores leads, and assigns owners — without human prompts.</p>
+                    <p class="definition-text">The workflow connecting that agent to others (e.g., Email Agent, Reporting Agent) is the agentic workflow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Three Ways to Build AI Agents -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <h1 class="slide-header glow-text">🎨 Three Ways to Build AI Agents — from Code to Click</h1>
+                
+                <div class="build-tiers">
+                    <!-- Tier 1: Build From Scratch -->
+                    <div class="tier-card tier-technical">
+                        <div class="tier-icon">💻</div>
+                        <h3 class="tier-title">Build From Scratch</h3>
+                        <p class="tier-description">Full control. Code your own LLM, memory, tools, and workflows.</p>
+                        <div class="tier-logos">
+                            <span class="tier-logo">OpenAI</span>
+                            <span class="tier-logo">LangChain</span>
+                            <span class="tier-logo">CrewAI</span>
+                            <span class="tier-logo">Postgres</span>
+                        </div>
+                        <div class="tier-label">Code-Heavy</div>
+                    </div>
+
+                    <div class="tier-arrow">→</div>
+
+                    <!-- Tier 2: Low-Code Automation -->
+                    <div class="tier-card tier-automation">
+                        <div class="tier-icon">⚙️</div>
+                        <h3 class="tier-title">Low-Code Automation</h3>
+                        <p class="tier-description">Connect AI reasoning to actions visually — faster, less technical.</p>
+                        <div class="tier-logos">
+                            <span class="tier-logo">Make.com</span>
+                            <span class="tier-logo">n8n</span>
+                            <span class="tier-logo">Zapier</span>
+                            <span class="tier-logo">Flowise</span>
+                        </div>
+                        <div class="tier-label">Visual Builder</div>
+                    </div>
+
+                    <div class="tier-arrow">→</div>
+
+                    <!-- Tier 3: Built-In Platform Agents -->
+                    <div class="tier-card tier-platform">
+                        <div class="tier-icon">🤖</div>
+                        <h3 class="tier-title">Built-In Platform Agents</h3>
+                        <p class="tier-description">Use agents already embedded in your platform.</p>
+                        <div class="tier-logos">
+                            <span class="tier-logo">HubSpot</span>
+                            <span class="tier-logo">Salesforce</span>
+                            <span class="tier-logo">Microsoft</span>
+                            <span class="tier-logo">Notion</span>
+                        </div>
+                        <div class="tier-label">Ready-Made</div>
+                    </div>
+                </div>
+
+                <div class="tier-spectrum">
+                    <div class="spectrum-item">
+                        <strong>Control</strong>
+                        <span class="spectrum-arrow">↑</span>
+                    </div>
+                    <div class="spectrum-divider"></div>
+                    <div class="spectrum-item">
+                        <strong>Ease</strong>
+                        <span class="spectrum-arrow">↑</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 4: Full-Screen Content Layout -->
-        <section class="slide" data-slide="4">
+        <!-- Slide 6: Real-World Examples -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <h1 class="slide-header glow-text">Now we are going to look at some examples</h1>
+                
+                <div class="examples-grid">
+                    <!-- Example 1 -->
+                    <div class="example-card card">
+                        <div class="example-number">1</div>
+                        <div class="example-icon">🎯</div>
+                        <h3 class="example-title">Customer Segmentation Agentic Workflow</h3>
+                    </div>
+
+                    <!-- Example 2 -->
+                    <div class="example-card card">
+                        <div class="example-number">2</div>
+                        <div class="example-icon">🏠</div>
+                        <h3 class="example-title">Property Segmentation Agent</h3>
+                    </div>
+
+                    <!-- Example 3 -->
+                    <div class="example-card card">
+                        <div class="example-number">3</div>
+                        <div class="example-icon">🤖</div>
+                        <h3 class="example-title">AI Agents Offered by HubSpot</h3>
+                    </div>
+
+                    <!-- Example 4 -->
+                    <div class="example-card card">
+                        <div class="example-number">4</div>
+                        <div class="example-icon">🔍</div>
+                        <h3 class="example-title">HubSpot AI Audit</h3>
+                    </div>
+
+                    <!-- Example 5 -->
+                    <div class="example-card card">
+                        <div class="example-number">5</div>
+                        <div class="example-icon">📊</div>
+                        <h3 class="example-title">HubSpot Auditor</h3>
+                    </div>
+
+                    <!-- Example 6 -->
+                    <div class="example-card card">
+                        <div class="example-number">6</div>
+                        <div class="example-icon">💼</div>
+                        <h3 class="example-title">Valve Sales Agent</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Full-Screen Content Layout -->
+        <section class="slide" data-slide="7">
             <div class="slide-content fullscreen-content">
                 <div class="content-box card">
                     <h2 class="glow-text">Full Screen Content</h2>
@@ -257,8 +468,8 @@
             </div>
         </section>
 
-        <!-- Slide 5: Centered Card Layout -->
-        <section class="slide" data-slide="5">
+        <!-- Slide 8: Centered Card Layout -->
+        <section class="slide" data-slide="8">
             <div class="slide-content centered">
                 <div class="center-card card">
                     <div class="card-header">
@@ -274,8 +485,8 @@
             </div>
         </section>
 
-        <!-- Slide 6: Additional Layout Example -->
-        <section class="slide" data-slide="6">
+        <!-- Slide 9: Additional Layout Example -->
+        <section class="slide" data-slide="9">
             <div class="slide-content">
                 <h2 class="slide-header glow-text">Another Layout</h2>
                 <div class="content-wrapper">
@@ -306,6 +517,12 @@
     <!-- Progress Bar -->
     <div class="progress-bar">
         <div class="progress-fill"></div>
+    </div>
+
+    <!-- Slide Number and Time Indicator -->
+    <div class="slide-info">
+        <div class="slide-number" id="slideNumber">1 / 10</div>
+        <div class="current-time" id="currentTime">00:00</div>
     </div>
 
     <script src="script.js"></script>
