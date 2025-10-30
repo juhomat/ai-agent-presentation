@@ -11,6 +11,9 @@ const currentTimeDisplay = document.getElementById('currentTime');
 // Video Showcase - all videos play simultaneously
 const showcaseVideos = document.querySelectorAll('.showcase-video');
 
+// Thank you video
+const thankYouVideo = document.querySelector('.thank-you-video video');
+
 // Initialize
 function init() {
     updateProgressBar();
@@ -69,6 +72,17 @@ function goToSlide(index) {
         pauseAllVideos();
     } else {
         playAllVideos();
+    }
+    
+    // Handle thank you video - play on last slide (slide 8)
+    if (thankYouVideo) {
+        if (currentSlide === totalSlides - 1) {
+            thankYouVideo.play().catch(err => {
+                console.log('Thank you video autoplay prevented:', err);
+            });
+        } else {
+            thankYouVideo.pause();
+        }
     }
 }
 

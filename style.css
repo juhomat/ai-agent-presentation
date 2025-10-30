@@ -806,6 +806,80 @@ p {
     background: var(--neutral-mid);
 }
 
+/* Slide 1: Introduction Styles */
+.intro-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.intro-photo {
+    position: sticky;
+    top: var(--spacing-xl);
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-medium);
+    border: 3px solid var(--primary-blue);
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.intro-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.intro-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.intro-section {
+    background: var(--white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--accent-cyan);
+    box-shadow: var(--shadow-soft);
+}
+
+.intro-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.intro-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.intro-section p + p {
+    margin-top: var(--spacing-xs);
+}
+
+.intro-section strong {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
 /* Slide 6: Real-World Examples Styles */
 .examples-grid {
     display: grid;
@@ -1397,7 +1471,7 @@ p {
     height: 100%;
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
     transition: width 0.3s ease;
-    width: 10%;
+    width: 11.11%;
 }
 
 /* Slide Info - Number and Time */
@@ -1713,5 +1787,35 @@ p {
     .example-btn {
         font-size: 13px;
         padding: 8px var(--spacing-sm);
+    }
+
+    .intro-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .intro-photo {
+        position: relative;
+        top: 0;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .intro-name {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .intro-title {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .intro-section h4 {
+        font-size: 16px;
+    }
+
+    .intro-section p {
+        font-size: 14px;
     }
 }
